@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+	<head>
+		
+		<title>menu</title>
+		<link rel="stylesheet" href="{% static 'css/Admin_menu.css' %}">
+		<div class="hd">
+		<header>
+		</header>
+		</div>
+	</head>
+	<body >
+
+		<div class="topnav" id="myTopnav">
+  <a href="../../homepage" class="active">Home</a>
+  <a href="#">Loan Statements</a>
+  <a href="#">Deposit Statement</a>
+  <div class="dropdown">
+   
+    
+  </div> 
+ 
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+		<div class="txt">
+		<h1 style="color:white;">
+			Admin Main page
+			</h1>
+			<p class="pt" style="color:white;">
+				Choose a menu from navigation to get started
+			</p>
+		</div>
+		
+<div class="out">
+<div class="box" style="background-color: black"> 
+	<a href="Show.php" style="color:darkred;">Account Information</a>
+	<p style="color:white;">Just for showing information of Active users.</p>
+</div>
+</div>
+<div class="out2">
+<div class="box2" style="background-color: black"> 
+	<a href="Admin.php" style="color:darkred;">User Information</a>
+	<p style="color:white;">To change,add,update and delete users account.</p>
+</div>
+</div>
+		
+	</body>
+</html>

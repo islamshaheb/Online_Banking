@@ -1,0 +1,127 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regetration</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet"  href="static/css/sign_up.css" >
+    <!--<script src="{% static 'js/app.js' %}"></script>-->
+    <link href="jquery.js" >
+</head>
+<body>
+
+ <script type="text/javascript">
+ document.write("Im in javascript");
+ function val()
+ {
+      //\\document.write("kkkkkkkkkkkkkkkkkkkk");
+     //  \\window.alert("sdduuuuuuuuuuuuuudd");
+    //____\\var name=document.forms["main"]["name"];
+   //      \\var name=document.forms.main.name;
+  //        \\
+
+  var name=document.forms.main.name;
+  var pass=document.forms.main.password;
+  var add=document.forms.main.address;
+  var size=pass.value.lentgh;
+   //document.write(size);
+  // window.alert("sdddd");
+     if (name.value == "")
+    {
+        window.alert("Please enter your name.");
+        name.focus();
+        return true;
+    }
+
+    if(size<8)
+    {
+    window.alert("Please Enter more than 7 character");
+    pass.focus;
+    return false;
+    }
+
+    if (add.value == "")
+    {
+        window.alert("Please enter Your Address");
+        add.focus;
+        return true;
+    }
+
+
+ }
+
+</script>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                           <h2><a href="../../homepage" class="active">Home</a></h2>
+
+                <marquee><b><h1>Welcome To WU Bank</h1></b></marquee>
+
+                <div class="signup-content">
+                    <div class="signuGETp-form">
+                        <h2 class="form-title">Sign up</h2>
+
+                        <form name="main" method="POST" action="{% url 'register' %}" onsubmit="return val()" class="register-form" id="register-form">
+								 {% csrf_token %}
+
+                            <div class="form-group">
+                               <tr><td><input  type="text" name="name" placeholder="Your Name"/>
+                                <span id="namelocation"></span></td></tr>
+                                <input type="email" name="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="address"  placeholder="Your Address"/>
+                                <input type="text" name="phoneNum"  placeholder="Your Phone Number"/>
+                                <input type="date" name="B_date" placeholder="Your Birth Date"/>
+                                <input type="text" name="nid"  placeholder="Your NID"/>
+                                <input type="text" name="branch" placeholder="Which branch you want to choose"/>
+                            </div>
+                            <div class="form-group">
+
+                                <table><td><tr><input type="password" name="password"  placeholder="Password" />
+                                <span id="password"></span></tr></td></table>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="re_password" id="re_pass" placeholder="Repeat your password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                              <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup"  class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="static/css/u.jpg" alt="sing up image"></figure>
+                        <a href="useropt" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+                </div>
+            </div>
+        </section>
+
+
+<!--<script src="{% static 'js/app.js'%}"></script>-->
+</body>
+
+
+
+
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

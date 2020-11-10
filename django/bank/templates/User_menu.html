@@ -1,0 +1,133 @@
+{% load static %}
+<html>
+	<head>
+		<header>
+			<div class="dv">
+			<img class="im" src="{% static 'bank/images/user.jpg'%}" width:500px>
+				</div>
+			</header>
+		<title>menu</title>
+		<link rel="stylesheet" href="{% static 'css/User_menu.css' %}">
+		<div class="hd">
+		<header>
+		</header>
+		</div>
+	</head>
+	<body style="background-color:powderblue;">
+		<div class="topnav" id="myTopnav">
+
+ <a href="../../homepage" class="active">Home</a>
+
+<!--{% for student in student_number %}
+    {{ student.Name}}
+    {{ student.Address }}
+    {{ student.Branch }}
+    {{ student.Phone }}
+{% endfor %}-->
+
+
+  <a href="loan">Take Loan</a>
+  <a href="depo">Deposite</a>
+  <a href="transfer">Transfer</a>
+  <div class="dropdown">
+    <button class="dropbtn">Menu 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Loan Statement</a>
+      <a href="#">Deposite Statement</a>
+      <a href="">Loan</a>
+      <a href="#">Deposite</a>
+    </div>
+  </div> 
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+		<div class="txt">
+		<h1>
+			User Main page
+			</h1>
+			<p class="pt">
+				<h2> All info of User</h2>
+{% for t in number %}
+
+			<p><b>Name:</b>  {{ t.Name}}</p>
+			<p><b>Email: </b>{{ t.Mail}}</p>
+			<p><b>Address:</b> {{ t.Address }}</p>
+			<p><b>Birth:</b> {{ t.Birth }}</p>
+			<p><b>Branch:</b> {{ t.Branch }}</p>
+			<p><b>NID:</b> {{ t.NID }}</p>
+			<p><b>Phone:</b> {{ t.Phone }}</p>
+			<p><b>Password:</b> {{ t.Password }}</p> <br><br>
+
+{% endfor %}
+
+<!-------------------------------------------------------->
+
+{% for tt in number2 %}
+
+
+{% if  tt.Loan_amount == "" %}
+<p>You have Not Take Any Loan Yet</p>
+
+{% else %}
+<p><b>Loan amount:</b> {{ tt.Loan_amount}} <br><b> </b>{{ tt.Loan_date}}</p> <br><br>
+
+{% endif %}
+{% endfor%}
+
+
+<!------------------------------------------------------>
+
+{% for ttt in number3 %}
+
+
+{% if  ttt.Deposite_amount == "" %}
+<p>You have Not Deposite Yet</p>
+
+{% else %}
+			<p><b>Deposite amount:</b> {{ ttt.Deposite_amount}} <br><b>Deposite Date:</b>{{ ttt.Deposite_date}}</p> <br><br>
+
+{% endif %}
+{% endfor%}
+
+<!------------------------------------------------------>
+
+{% for tttt in number4 %}
+
+
+{% if  tttt.Transfer_amount == "" %}
+<p>You have Not Deposite Yet</p>
+
+{% else %}
+			<p><b>You Got from Your Friend:</b> {{ tttt.Transfer_amount}} <br><b>Getting Date:</b>{{ tttt.Transfer_date}}</p> <br><br>
+
+{% endif %}
+{% endfor%}
+
+		</div>
+<div class="nahi">
+<div class="out">
+<div class="box"> 
+	<a href="logout">logout</a>
+	<p>To view your personal account information</p>
+</div >
+</div >
+<div class="out2">
+<div class="box2"> 
+	<a href="#">Account Information</a>
+	<p>To view youur account policy information</p>
+
+</div>
+</div>
+</div>
+
+		<div class="footer">
+	<h4>
+	Facing any probelm ??<br>
+		Contact : 01955384162
+	</h4>
+		</div>
+
+	</body>
+</html>

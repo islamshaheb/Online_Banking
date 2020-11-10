@@ -1,0 +1,97 @@
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+		<link href="{% static 'themes/css/bootstrappage.css' %}" rel="stylesheet"/>
+
+
+		<!--<script src="{% static 'themes/js/superfish.js' %}"></script>
+		<script src="{% static 'js/pass.js' %}"></script>
+		<link href="jquery.js" >-->
+
+
+
+		  <link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+
+	</head>
+    <body>
+
+ <script type="text/javascript" rel="stylesheet">
+ function bro()
+ {
+  var name=document.forms.main.username;
+  var na=document.forms.main.amount;
+
+ if (name.value == "")
+    {
+        window.alert("Please Enter Your UserName");
+        name.focus();
+        return true;
+    }
+
+     if (name.value != "")
+    {
+        window.alert("Please Wait For Verification,, You'll receive a Confirmation message through Email");
+        name.focus();
+        return true;
+    }
+ if (na.value == "")
+    {
+        window.alert("Please Enter Amount");
+        name.focus();
+        return true;
+    }
+
+ }
+
+</script>
+ <div class="limiter">
+		<div class="container-login100" style="background-image: url('./static/bank/images/okk.png');">
+			<div class="wrap-login100">
+       	<h1><b background-color="black"> <a href="../../login" class="active"><b>Use Aother Account</b></a></b></h1>
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+						<p><h1><b background-color="red"> <a href="../../homepage" class="active">Home</a></b></h1><br></p>
+
+
+					</span>
+
+
+					  <form onsubmit="return bro()" method="POST" action="{% url 'depo' %}" name="main" >
+						  	{% csrf_token %}
+
+						  <div class="wrap-input100 validate-input" data-validate = "Enter username">
+					        	<input class="input100" type="text" name="username" placeholder="Username">
+						        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+					     </div>
+
+						  <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="date" name="date" placeholder="Date">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="number" name="amount" placeholder="Amount">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							 <input type="submit" name="loan"   value="Confirm Deposit"/>
+						</button>
+					</div>
+					  </form>
+
+			</div>
+		</div>
+	</div>
+    </body>
+</html>
